@@ -2,7 +2,7 @@
 
 /**
  * print_square - printing square shape of #
- *
+ * @size: value to be checked
  * Return: nothing
  */
 void print_square(int size)
@@ -15,9 +15,9 @@ void print_square(int size)
 	for (i = 1; i <= size; i++)
 	{
 		for (j = 1; j <= size; j++)
-	{
-		_putchar('#');
-	}
+		{
+			_putchar('#');
+		}
 		_putchar('\n');
 	}
 }
