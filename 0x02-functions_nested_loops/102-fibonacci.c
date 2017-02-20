@@ -17,7 +17,7 @@ int main(void)
 		printf("%lu, %lu", i, j);
 		i = i + j;
 		j = j + i;
-		if (c < 23)
+		if (c < 24)
 			printf(", ");
 		else
 			printf("\n");
