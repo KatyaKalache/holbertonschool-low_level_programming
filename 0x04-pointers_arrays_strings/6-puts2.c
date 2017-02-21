@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * _puts2 - prints a string
+ * puts2 - prints a string
  * @str: value to be checked
  * Return: nothing
  */
