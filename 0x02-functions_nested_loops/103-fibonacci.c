@@ -7,12 +7,12 @@
  */
 int main(void)
 {
-	int num1 = 1;
-	int num2 = 2;
-	int num;
-	int sum = 0;
+	unsigned long num1 = 1;
+	unsigned long num2 = 2;
+	unsigned long num;
+	unsigned long sum = 0;
 	int c;
-	int max = 4000000;
+	unsigned long max = 4000000;
 
 	num = num1 + num2;
 	for (num = 0; num < max; num++)
@@ -22,6 +22,6 @@ int main(void)
 		num1 = num2;
 		num2 = num;
 	}
-	printf("%d\n", sum);
+	printf("%lu\n", sum);
 	return (0);
 }
