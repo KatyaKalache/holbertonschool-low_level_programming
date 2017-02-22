@@ -2,9 +2,12 @@
 
 /**
  * puts_half - returns length of a string
+ * _strlen - gets the length
  * @str: value to be checked
+ * @s:checking the length
  * Return: length
  */
+
 int _strlen(char *s)
 {
 	int l = 0;
