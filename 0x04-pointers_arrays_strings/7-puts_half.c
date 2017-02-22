@@ -20,7 +20,7 @@ int _strlen(char *s)
  */
 void puts_half(char *str)
 {
-	int i = _strlen(str);
+	int i = _strlen(str) + 1;
 	int j = i / 2;
 
 	while (str[j] != '\0')
