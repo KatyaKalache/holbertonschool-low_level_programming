@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * print_array - prints a string
+ * print_array - prints values of array
  * @a: value to be checked
  * @n: number of elements of the array to print
  * Return: nothing
@@ -13,10 +13,13 @@ void print_array(int *a, int n)
 
 	for (i = 0; i < n; i++)
 	{
-		printf("%d", a[i]);
-		if (i < 4)
+		if(i < n - 1)
 		{
-			printf(", ");
+		printf("%d, ", a[i]);
+		}
+		else
+		{
+			printf("%d", a[i]);
 		}
 	}
 	putchar('\n');
