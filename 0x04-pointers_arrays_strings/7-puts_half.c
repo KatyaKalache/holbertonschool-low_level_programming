@@ -5,12 +5,24 @@
  * @str: value to be checked
  * Return: length
  */
+int _strlen(char *s)
+{
+	int l = 0;
+
+	while (*(s + l))
+		l++;
+	return (l);
+}
+
 void puts_half(char *str)
 {
-	while (*str != '\0')
+	int i = _strlen(str);
+	int j = i / 2;
+
+	while (str[j] != '\0')
 	{
-		_putchar(*(str+5));
-		str++;
+		_putchar(str[j]);
+		j++;
 	}
 	_putchar('\n');
 }
