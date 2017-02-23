@@ -1,9 +1,10 @@
 #include "holberton.h"
 
 /**
- *
- *
- *
+ * _strcat - adding two lines together
+ * @dest: first word
+ * @src: 2nd word
+ * Return: dest
  */
 char *_strcat(char *dest, char *src)
 {
