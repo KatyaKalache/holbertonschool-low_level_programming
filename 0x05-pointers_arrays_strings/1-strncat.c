@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * _strcat - adding two lines together
+ * _strncat - adding two lines together
  * @dest: first word
  * @src: 2nd word
  * @n: bytes
