@@ -4,7 +4,7 @@
  * _strcmp - adding two lines together
  * @s1: first string
  * @s2: 2nd string
- * Return: nothing
+ * Return: result
  */
 int _strcmp(char *s1, char *s2)
 {
