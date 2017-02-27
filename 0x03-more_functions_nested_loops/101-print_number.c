@@ -7,11 +7,21 @@
  */
 void print_number(int n)
 {
-	if (n > 0)
+	int reversed;
+
+	reversed = 0;
+	while (n > 0)
 	{
-		_putchar(n / 10 + '0');
-		_putchar(n % 10 + '0');
+		reversed = reversed * 10 + n % 10;
+		n /= 10;
 	}
+	while (reversed > 0)
+	{
+		n = reversed % 10 + '0';
+		_putchar(n);
+		reversed /= 10;
+	}
+
 	if (n == 0)
 	{
 		_putchar('0');
