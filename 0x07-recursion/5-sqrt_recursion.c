@@ -20,6 +20,7 @@ int nat_root(int i, int n)
 		return (nat_root(i + 1, n));
 	}
 }
+
 /**
  * _sqrt_recursion - returns the natural square root
  * @n: number ot be checked
