@@ -3,6 +3,7 @@
 /**
  * nat_root - tracking number
  * @n: number
+ * @i: numbers to be multiply
  * Return: number
  */
 int nat_root(int i, int n)
