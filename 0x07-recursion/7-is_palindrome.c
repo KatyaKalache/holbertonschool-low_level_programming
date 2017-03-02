@@ -25,11 +25,11 @@ int _strlen_recursion(char *s)
 
 int firstletter_lasterletter(char *first, char *last)
 {
-	if (first != last)
+	if (*first != *last)
 	{
 		return (0);
 	}
-	else if (&first == &last)
+	else if (first >= last)
 	{
 		return (1);
 	}
