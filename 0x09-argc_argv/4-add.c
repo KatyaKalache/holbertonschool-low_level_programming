@@ -7,7 +7,7 @@
  * @argv: arguments
  * Return: sum of arguments
  */
-int main (int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	int i;
 	int sum = 0;
@@ -18,4 +18,10 @@ int main (int argc, char *argv[])
 	}
 	printf("%d\n", sum);
 	return (0);
+	else
+	{
+		printf("Error\n");
+		return (1);
+	}
+
 }
