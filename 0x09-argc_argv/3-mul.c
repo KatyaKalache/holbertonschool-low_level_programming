@@ -10,13 +10,13 @@
 int main(int argc, char *argv[])
 {
 	int i;
-	int mul = 0;
+	int mul = 1;
 
-	if (argc > 1)
+	if (argc > 2)
 	{
 		for (i = 1; i < argc; i++)
 		{
-			mul = atoi(argv[1]) * atoi(argv[2]);
+			mul *= atoi(argv[i]);
 		}
 		printf("%d\n", mul);
 	}
@@ -25,5 +25,5 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (1);
 	}
-	return (0);
+		return (0);
 }
