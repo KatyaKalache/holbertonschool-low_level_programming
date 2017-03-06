@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
 
 /**
  * main - print sum of arguments received in command line
@@ -10,21 +9,20 @@
  */
 int main(int argc, char *argv[])
 {
-        int i;
-        int sum = 0;
+	int i;
+	int sum = 0;
 
-        for (i = 1; i < argc; i++)
-        {
-                if (*argv[i] > 47 && *argv[i] < 58)
-                {
+	for (i = 1; i < argc; i++)
+	{
+		if (*argv[i] > 47 && *argv[i] < 58)
+		{
 			sum += (atoi(argv[i]));
 		}
 		else
 		{
-                        printf("Error\n");
+			printf("Error\n");
 			return (1);
 		}
-
 	}
 	printf("%d\n", sum);
 	return (0);
