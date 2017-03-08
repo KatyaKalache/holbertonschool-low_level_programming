@@ -23,26 +23,36 @@ return (l);
 char *str_concat(char *s1, char *s2)
 {
 	int i = 0;
-	char *copy1;
-	char *copy2;
+	int j = 0;
+	int length;
+	int lens1;
+	int lens2;
+	char *space;
+
+	lens1 = _strlen(s1);
+	lens2 = _strlen(s2);
+	length = lens1 + lens2;
 
 	if (s1 == NULL || s2 == NULL)
 	{
 		return (NULL);
 	}
-	copy1 = malloc(_strlen(s1) * sizeof(char) + 1);
-	copy2 = malloc(_strlen(s2) * sizeof(char) + 1);
-
-	for (i = 0; i <= _strlen(s1); i++)
+	if (s1 == NULL)
 	{
-		copy1[i] = s1[i];
+		s1 = "";
 	}
-	return (copy1);
-	free(copy1);
-	for (i = 0; i <= _strlen(s2); i++)
+	if (s2 == NULL)
 	{
-		copy2[i] = s2[i];
+		s2 = "";
 	}
-	return (copy2);
-	free(copy2);
+	space = malloc(length * sizeof(char) + 1);
+	for (i = 0; i <= lens1; i++)
+	{
+		space[i] = s1[i];
+	}
+	for (j = s1[i]; j <= lens2; j++)
+	{
+		space[j] = s2[j];
+	}
+	return (space);
 }
