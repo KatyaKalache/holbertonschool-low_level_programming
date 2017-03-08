@@ -47,11 +47,11 @@ char *str_concat(char *s1, char *s2)
 	{
 		space[i] = s1[i];
 	}
+	space[i] = '\0';
 	for (j = 0; j < lens2; i++, j++)
 	{
 		space[i] = s2[j];
 	}
 	return (space);
-	space[i] = '\0';
 	space[j] = '\0';
 }
