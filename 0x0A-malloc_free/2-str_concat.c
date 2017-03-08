@@ -29,10 +29,6 @@ char *str_concat(char *s1, char *s2)
 	int lens2 = 0;
 	char *space;
 
-	lens1 = _strlen(s1);
-	lens2 = _strlen(s2);
-	length = lens1 + lens2;
-
 	if (s1 == NULL)
 	{
 		s1 = "";
@@ -41,12 +37,16 @@ char *str_concat(char *s1, char *s2)
 	{
 		s2 = "";
 	}
+	lens1 = _strlen(s1);
+        lens2 = _strlen(s2);
+        length = lens1 + lens2;
 	lens2++;
 	space = malloc(length * sizeof(char));
 	for (i = 0; i < lens1; i++)
 	{
 		space[i] = s1[i];
 	}
+
 	for (j = 0; j < lens2; i++, j++)
 	{
 		space[i] = s2[j];
