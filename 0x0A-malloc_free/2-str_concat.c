@@ -34,20 +34,12 @@ char *str_concat(char *s1, char *s2)
 	length = lens1 + lens2;
 
 	if (s1 == NULL)
-	{
-		return (NULL);
-	}
-	if (s2 == NULL)
-	{
-		return (NULL);
-	}
-	if (s1 == NULL)
         {
-                lens1 = 0;
+                s1 = "";
         }
         if (s2 == NULL)
         {
-               lens2 = 0;
+               s2 = "";
         }
 	space = malloc(length * sizeof(char) + 1);
 	for (i = 0; i < lens1; i++)
