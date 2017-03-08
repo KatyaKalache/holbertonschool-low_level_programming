@@ -33,7 +33,11 @@ char *str_concat(char *s1, char *s2)
 	lens2 = _strlen(s2);
 	length = lens1 + lens2;
 
-	if (s1 == NULL || s2 == NULL)
+	if (s1 == NULL)
+	{
+		return (NULL);
+	}
+	if (s2 == NULL)
 	{
 		return (NULL);
 	}
@@ -55,4 +59,6 @@ char *str_concat(char *s1, char *s2)
 		space[j] = s2[j];
 	}
 	return (space);
+	space[i] = '\0';
+	free(space);
 }
