@@ -25,8 +25,8 @@ char *str_concat(char *s1, char *s2)
 	int i = 0;
 	int j = 0;
 	int length;
-	int lens1;
-	int lens2;
+	int lens1 = 0;
+	int lens2 = 0;
 	char *space;
 
 	lens1 = _strlen(s1);
