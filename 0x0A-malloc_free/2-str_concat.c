@@ -50,15 +50,14 @@ char *str_concat(char *s1, char *s2)
 		s2 = "";
 	}
 	space = malloc(length * sizeof(char) + 1);
-	for (i = 0; i <= lens1; i++)
+	for (i = 0; i < lens1; i++)
 	{
 		space[i] = s1[i];
 	}
-	for (j = s1[i]; j <= lens2; j++)
+	for (j = 0; j < lens2; i++, j++)
 	{
-		space[j] = s2[j];
+		space[i] = s2[j];
 	}
 	return (space);
-	space[i] = '\0';
-	free(space);
+	space[j] = '\0';
 }
