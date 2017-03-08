@@ -38,8 +38,8 @@ char *str_concat(char *s1, char *s2)
 		s2 = "";
 	}
 	lens1 = _strlen(s1);
-        lens2 = _strlen(s2);
-        length = lens1 + lens2;
+	lens2 = _strlen(s2);
+	length = lens1 + lens2;
 	lens2++;
 	space = malloc(length * sizeof(char));
 	for (i = 0; i < lens1; i++)
