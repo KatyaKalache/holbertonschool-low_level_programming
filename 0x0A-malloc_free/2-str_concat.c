@@ -41,13 +41,19 @@ char *str_concat(char *s1, char *s2)
 	{
 		return (NULL);
 	}
-
+	if (s1 == NULL)
+        {
+                lens1 = 0;
+        }
+        if (s2 == NULL)
+        {
+               lens2 = 0;
+        }
 	space = malloc(length * sizeof(char) + 1);
 	for (i = 0; i < lens1; i++)
 	{
 		space[i] = s1[i];
 	}
-	space[i] = '\0';
 	for (j = 0; j < lens2; i++, j++)
 	{
 		space[i] = s2[j];
