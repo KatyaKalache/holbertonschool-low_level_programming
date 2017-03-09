@@ -25,7 +25,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	unsigned int i = 0;
 	unsigned int j = 0;
-	int length;
 	unsigned int lens1 = 0;
 	unsigned int lens2 = 0;
 	char *fulllength;
@@ -40,13 +39,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	lens1 = _strlen(s1);
 	lens2 = _strlen(s2);
-	length = lens1 + lens2;
 	if (lens2 > n)
         {
                 lens2 = n;
         }
 
-	fulllength = malloc(length * sizeof(char) + 1);
+	fulllength = malloc((lens1 + lens2) * sizeof(char) + 1);
 	for (i = 0; i < lens1; i++)
 	{
 		fulllength[i] = s1[i];
