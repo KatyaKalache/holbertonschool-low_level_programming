@@ -2,9 +2,7 @@
 #define DOG_H
 /**
  * dog - defines type
- * @name: dog name
- * @age: dogs age
- * @owner: owner name
+ *
  * Return: nothing
  */
 typedef struct dog
