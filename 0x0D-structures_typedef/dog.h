@@ -1,9 +1,11 @@
 #ifndef DOG_H
 #define DOG_H
 /**
- * dog - defines type
- *
- * Return: nothing
+ * struct dog - defines type
+ * @name: dog name
+ * @age: age
+ * @owner: dogs owner
+ * Description: d
  */
 typedef struct dog
 {
