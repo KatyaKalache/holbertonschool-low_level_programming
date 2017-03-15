@@ -44,20 +44,26 @@ dog_t *new_dog(char *name, float age, char *owner)
 	new_struct = malloc(sizeof(dog_t));
 	if (new_struct == NULL)
 		return (NULL);
-	owner_len = _str_len(owner);
+	if (owner != NULL)
+	{
+		owner_len = _str_len(owner);
 	new_struct->owner = malloc(sizeof(char) * owner_len);
 	if (new_struct->owner == NULL)
 	{
 		return (NULL);
 	}
 	_strcpy(new_struct->owner, owner);
-	name_len = _str_len(name);
+	}
+	if (name != NULL)
+	{
+		name_len = _str_len(name);
 	new_struct->name = malloc(sizeof(char) * name_len);
 	if (new_struct->name == NULL)
 	{
 		return (NULL);
 	}
 	_strcpy(new_struct->name, name);
+	}
 	new_struct->age = age;
 	free(new_struct);
 	return (new_struct);
