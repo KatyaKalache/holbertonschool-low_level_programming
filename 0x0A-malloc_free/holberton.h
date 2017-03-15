@@ -9,4 +9,5 @@ void free_grid(int **grid, int height);
 char *argstostr(int ac, char **av);
 unsigned int total_length (int ac, char **av);
 void from_to(char *origin, char *dest);
+void copy_string (char **av, char *s);
 #endif
