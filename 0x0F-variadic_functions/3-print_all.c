@@ -7,21 +7,42 @@
  * Return: anything
  */
 void print_all(const char * const format, ...)
- {
+{
 	va_list param;
-	int i;
+	int i = 0;
+	char datatype;
+	char *strcopy;
 
 	va_start(param, format);
-	for (i = 0; i < *format; i++)
+	while (datatype != '\0' && format != NULL)
 	{
-	if (* format == 'c')
-	{
-		printf("%c", va_arg(param, int));
-	}
-	else if (* format == 'i')
-	{
-		printf("%d", va_arg(param, int));
-	}
+	datatype = format[i];
+		if (datatype == 'c')
+		{
+			printf("%c", va_arg(param, int));
+		}
+		else if (datatype == 'i')
+		{
+			printf("%d", va_arg(param, int));
+		}
+		else if (datatype == 's')
+		{
+			strcopy = va_arg(param, char*);
+			if (strcopy != NULL)
+			{
+				printf("%s", strcopy);
+			}
+			else
+			{
+				printf("(nil)");
+			}
+		}
+		else if (datatype == 'f')
+		{
+			printf("%f", va_arg(param, double));
+		}
+		printf(", ");
+		i++;
 	}
 	printf("\n");
 	va_end(param);
