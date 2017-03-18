@@ -10,38 +10,37 @@ void print_all(const char * const format, ...)
 {
 	va_list param;
 	int i = 0;
-	char datatype;
 	char *strcopy;
 
 	va_start(param, format);
-	while (datatype != '\0' && format != NULL)
+	while (format[i])
 	{
-	datatype = format[i];
-		if (datatype == 'c')
+		switch (format[i])
 		{
+		case 'c':
 			printf("%c", va_arg(param, int));
-		}
-		else if (datatype == 'i')
-		{
+				break;
+		case 'i':
 			printf("%d", va_arg(param, int));
-		}
-		else if (datatype == 's')
-		{
+				break;
+		case 's':
 			strcopy = va_arg(param, char*);
-			if (strcopy != NULL)
-			{
-				printf("%s", strcopy);
-			}
-			else
+			if (strcopy == NULL)
 			{
 				printf("(nil)");
 			}
-		}
-		else if (datatype == 'f')
-		{
+			printf("%s", strcopy);
+			break;
+		case 'f':
 			printf("%f", va_arg(param, double));
+			break;
+		default:
+			break;
 		}
-		printf(", ");
+		if (format[i + 1])
+		{
+			printf(", ");
+		}
 		i++;
 	}
 	printf("\n");
