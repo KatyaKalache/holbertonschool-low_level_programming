@@ -12,11 +12,6 @@ void print_all(const char * const format, ...)
 	int i = 0;
 	char *strcopy;
 
-	while (format == NULL)
-	{
-		printf("\n");
-		return;
-	}
 	va_start(param, format);
 	while (format[i])
 	{
