@@ -38,7 +38,6 @@ void print_all(const char * const format, ...)
 			printf("%f", va_arg(param, double));
 			break;
 		default:
-			succes == 0;
 			break;
 		}
 		if (format[i + 1] && success == 1)
