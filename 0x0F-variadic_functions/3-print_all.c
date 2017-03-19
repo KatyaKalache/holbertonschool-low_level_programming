@@ -9,9 +9,8 @@
 void print_all(const char * const format, ...)
 {
 	va_list param;
-	int i = 0;
+	int i = 0, success;
 	char *strcopy;
-	int success;
 
 	va_start(param, format);
 	while (format && format[i])
