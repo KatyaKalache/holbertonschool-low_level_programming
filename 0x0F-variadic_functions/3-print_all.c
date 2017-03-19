@@ -18,11 +18,11 @@ void print_all(const char * const format, ...)
 		switch (format[i])
 		{
 		case 'c':
-			printf("%c", va_arg(param, int));
-				break;
+			printf("%c, ", va_arg(param, int));
+			break;
 		case 'i':
-			printf("%d", va_arg(param, int));
-				break;
+			printf("%d, ", va_arg(param, int));
+			break;
 		case 's':
 			strcopy = va_arg(param, char*);
 			if (strcopy == NULL)
@@ -32,14 +32,10 @@ void print_all(const char * const format, ...)
 			printf("%s", strcopy);
 			break;
 		case 'f':
-			printf("%f", va_arg(param, double));
+			printf("%f, ", va_arg(param, double));
 			break;
 		default:
 			break;
-		}
-		if (format[i + 1])
-		{
-			printf(", ");
 		}
 		i++;
 	}
