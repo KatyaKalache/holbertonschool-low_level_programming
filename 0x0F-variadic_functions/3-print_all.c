@@ -30,11 +30,8 @@ void print_all(const char * const format, ...)
 				printf("(nil)");
 				break;
 			}
-			else if (strcopy != NULL)
-			{
 			printf("%s", strcopy);
 			break;
-			}
 		case 'f':
 			printf("%f", va_arg(param, double));
 			break;
