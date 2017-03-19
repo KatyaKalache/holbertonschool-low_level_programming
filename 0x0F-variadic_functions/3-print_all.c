@@ -11,10 +11,12 @@ void print_all(const char * const format, ...)
 	va_list param;
 	int i = 0;
 	char *strcopy;
+	int success;
 
 	va_start(param, format);
 	while (format[i])
 	{
+		success = 1;
 		switch (format[i])
 		{
 		case 'c':
@@ -38,7 +40,7 @@ void print_all(const char * const format, ...)
 		default:
 			break;
 		}
-		if (format[i - 1] && format[i + 1])
+		if (format[i - 1] && format[i + 1] && success == 1)
 		{
 			printf(", ");
 		}
