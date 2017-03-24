@@ -9,7 +9,8 @@
 void free_list(list_t *head)
 {
 	list_t *tempnode;
-	while(head)
+
+	while (head)
 	{
 	tempnode = head->next;
 	free(head);
