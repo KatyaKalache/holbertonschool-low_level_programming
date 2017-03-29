@@ -21,21 +21,21 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		free(tempnode1);
 		return (1);
 	}
-	if (*head != NULL)
-	{
+
 	for (tempnode1 = *head; tempnode1 != NULL; tempnode1 = tempnode1->next)
 	{
 
 		if (counter == (index - 1))
 		{
 			tempnode2 = tempnode1->next;
+			if (tempnode2)
+			{
 			tempnode1->next = tempnode2->next;
+			free(tempnode2);
+			return (1);
+			}
 		}
-		counter++;
+			counter++;
 	}
-	free(tempnode2);
-	return (1);
-	}
-	else
 		return (-1);
 }
