@@ -16,10 +16,6 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 
 	tempnode = *head;
 	counter = 0;
-	if (*head == NULL)
-	{
-		return (NULL);
-	}
 	while (tempnode && (counter < idx - 1))
 	{
 		tempnode = tempnode->next;
