@@ -71,8 +71,8 @@ int op_mod(int a, int b)
 
 	if (b == 0)
 	{
-                printf("Error\n");
-                exit(100);
+		printf("Error\n");
+		exit(100);
 	}
 	mod = a % b;
 	return (mod);
