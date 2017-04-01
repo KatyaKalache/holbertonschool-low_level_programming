@@ -1,3 +1,4 @@
+#include "3-calc.h"
 /**
  * op_add - sums up
  * @a: 1st int
