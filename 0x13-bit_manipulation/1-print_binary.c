@@ -7,23 +7,29 @@
  */
 void print_binary(unsigned long int n)
 {
-	unsigned int i;
+	int i;
 	unsigned long int shifted;
-	char *leading;
-	unsigned int byte_size = sizeof(unsigned long int) * 8;
+	unsigned int flag;
+	int byte_size = sizeof(unsigned long int) * 8 - 1;
 
-	for (i = 0; i < byte_size; i++)
+	flag = 0;
+
+	if (n == 0)
 	{
-		shifted = n << 1;
-		if (shifted != n)
+		_putchar ('0');
+	}
+
+	for (i = byte_size; i >= 0; i--)
+	{
+		shifted = n >> i;
+		if (shifted & 1)
 		{
 			_putchar('1');
-			leading = 0;
+			flag = 1;
 		}
-		else if (!leading)
+		else if (!(shifted & 1) && (flag == 1))
 		{
 			_putchar ('0');
 		}
-		shifted = shifted >> 1;
 	}
 }
