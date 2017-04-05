@@ -16,12 +16,6 @@ int create_file(const char *filename, char *text_content)
 	int fd;
 	int write_to_file;
 
-	fd = open(filename, O_CREAT | O_WRONLY, 0600);
-
-	if (fd == -1)
-	{
-		return (-1);
-	}
 	if (filename == NULL)
 	{
 		return (-1);
@@ -29,6 +23,11 @@ int create_file(const char *filename, char *text_content)
 	if (text_content == NULL)
 	{
 		fd = open(filename, O_CREAT | O_WRONLY);
+	}
+	fd = open(filename, O_CREAT | O_WRONLY, 0600);
+	if (fd == -1)
+	{
+		return (-1);
 	}
 	write_to_file = write(fd, text_content, 8);
 
