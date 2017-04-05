@@ -30,27 +30,26 @@ int main(int argc, char **argv)
 	if (file_from == -1)
 		exit(98);
 /* open file to */
-	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC | O_RDWR, S_IRUSR
+	file_to = open(argv[2], O_CREAT | O_TRUNC | O_RDWR, S_IRUSR
 		       | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
 	if (file_to == -1)
-		exit (98);
+		exit(98);
 /* read file_from to buffer */
 	file_read = read(file_from, buf, BUFFSIZE);
 	if (file_read == -1)
 		exit(98);
 
-/* write from buffer to file_to. file_read(size_t) -
-   specifies the n of bytes read  */
+/* write from buffer to file_to. file_read(size_t) - the n of bytes read  */
 	while (file_read > 0)
 	{
 
 		write_to = write(file_to, buf, file_read);
 
 		if (write_to == -1)
-			exit (99);
+			exit(99);
 		file_read = read(file_from, buf, BUFFSIZE);
 		if (file_read == -1)
-			exit(99);
+			exit(98);
 	}
 	close(file_from);
 	close(file_to);
