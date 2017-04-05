@@ -6,6 +6,20 @@
 #include <stdlib.h>
 #include <unistd.h>
 /**
+ * _strlen - finds string length
+ * @s: a string
+ * Return: string length
+ */
+int _strlen(char *s)
+{
+	int length;
+
+	length = 0;
+	while (s[length] != '\0')
+		length++;
+	return (length);
+}
+/**
  * create_file - creates a file
  * @filename: pointer to the file to be created
  * @text_content: terminated string to write to the file
@@ -15,6 +29,7 @@ int create_file(const char *filename, char *text_content)
 {
 	int fd;
 	int write_to_file;
+	ssize_t length;
 
 	if (filename == NULL)
 	{
@@ -33,14 +48,14 @@ int create_file(const char *filename, char *text_content)
 		return (-1);
 	}
 
-	write_to_file = write(fd, text_content, 8);
+	length = _strlen(text_content);
 
-	if (write_to_file == -1)
+	write_to_file = write(fd, text_content, length);
+
+	if (write_to_file != length)
 	{
 		close(fd);
 		return (-1);
 	}
-
-	close(fd);
 	return (1);
 }
