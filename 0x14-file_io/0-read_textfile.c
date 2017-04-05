@@ -5,6 +5,12 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdlib.h>
+/**
+ * read_textfile - reads texfile and prints it to POSIX stdout
+ * @letters: number of letters to be read
+ * @filename: pointer to a file with text
+ * Return: number of letters read
+ */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
