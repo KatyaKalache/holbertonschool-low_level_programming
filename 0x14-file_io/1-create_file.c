@@ -29,7 +29,7 @@ int create_file(const char *filename, char *text_content)
 {
 	int fd;
 	int write_to_file;
-	ssize_t length;
+	int length;
 
 	if (filename == NULL)
 	{
