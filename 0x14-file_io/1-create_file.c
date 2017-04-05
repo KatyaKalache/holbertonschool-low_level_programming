@@ -14,8 +14,7 @@
 int create_file(const char *filename, char *text_content)
 {
 	int fd;
-
-	text_content = NULL;
+	int write_to_file;
 
 	fd = open(filename, O_CREAT | O_WRONLY, 0600);
 
@@ -28,12 +27,13 @@ int create_file(const char *filename, char *text_content)
 		return (-1);
 	}
 
-	write(fd, text_content, 1);
+	write_to_file = write(fd, text_content, 8);
 
-	if ((write(fd, text_content, 1) == -1))
+	if (write_to_file == -1)
 	{
 		return (-1);
 	}
+
 	close(fd);
 	return (1);
 }
