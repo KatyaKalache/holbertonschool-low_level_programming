@@ -35,17 +35,13 @@ int append_text_to_file(const char *filename, char *text_content)
 		return (-1);
 	}
 
-	fd = open(filename, O_APPEND | O_WRONLY, 0664);
+	fd = open(filename, O_APPEND | O_RDWR);
 	if (fd == -1)
 	{
 		return (-1);
 	}
 	length = _strlen(text_content);
 	write(fd, text_content, length);
-	if (write(fd, text_content, length) == -1)
-	{
-		return (-1);
-	}
 	close(fd);
 	return (1);
 }
