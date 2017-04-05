@@ -4,20 +4,8 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
-/**
- * _strlen - finds string length
- * @s: a string
- * Return: string length
- */
-int _strlen(char *s)
-{
-	int length;
-
-	length = 0;
-	while (s[length] != '\0')
-		length++;
-	return (length);
-}
+#include <unistd.h>
+#define BUFFSIZE 1024
 /**
  * main - copies one file to another
  * @argc: number of arguments passed
@@ -28,23 +16,43 @@ int main(int argc, char **argv)
 {
 	int file_from;
 	int file_to;
-	char *buf[1024];
+	char buf[BUFFSIZE];
 	int write_to;
-	int length;
+	int file_read;
 
-	buf = malloc(sizeof(char) * buf);
+	if (argc != 3)
+	{
+		exit(97);
+	}
+
+/* open file from */
 	file_from = open(argv[1], O_RDONLY);
 	if (file_from == -1)
-		return(-1);
+		exit(98);
+/* open file to */
+	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC | O_RDWR, S_IRUSR
+		       | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
+	if (file_to == -1)
+		exit (98);
+/* read file_from to buffer */
+	file_read = read(file_from, buf, BUFFSIZE);
+	if (file_read == -1)
+		exit(98);
 
-	file_to = open(argv[2], O_CREAT | O_TRUNC | O_RDWR, S_IRUSR | S_IWUSR);
+/* write from buffer to file_to. file_read(size_t) -
+   specifies the n of bytes read  */
+	while (file_read > 0)
+	{
 
-	length = _strlen(text_content);
+		write_to = write(file_to, buf, file_read);
 
-	write_to = write(file_from, text_content, length);
-
-	if (write_to == -1)
-		return (-1);
+		if (write_to == -1)
+			exit (99);
+		file_read = read(file_from, buf, BUFFSIZE);
+		if (file_read == -1)
+			exit(99);
+	}
 	close(file_from);
+	close(file_to);
 	return (1);
 }
