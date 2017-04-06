@@ -26,8 +26,6 @@ int main(int argc, char **argv)
 		exit(97);
 	}
 	file_exists(argv[1], argv[2]);
-	if (buf == NULL)
-		return (1);
 	file_from = open(argv[1], O_RDONLY);
 	if (file_from == -1)
 		read_error(argv[1]);
@@ -51,7 +49,7 @@ int main(int argc, char **argv)
 	if ((close(file_from)) == -1)
 		close_error(file_from);
 	close(file_to);
-	if ((close(file_from)) == -1)
+	if ((close(file_to)) == -1)
 		close_error(file_to);
 	return (0);
 }
@@ -86,7 +84,7 @@ void close_error(int fd)
 	exit(100);
 }
 /**
- * argv_exists - checks if files exist
+ * file_exists - checks if files exist
  * @argv1: first argument passed
  * @argv2: second argument passed
  * Return: nothing
