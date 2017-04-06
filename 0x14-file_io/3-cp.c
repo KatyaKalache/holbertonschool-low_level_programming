@@ -32,7 +32,7 @@ int main(int argc, char **argv)
 	file_to = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, S_IRUSR
 		       | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
 	if (file_to == -1)
-		read_error(argv[2]);
+		read_error(argv[1]);
 	file_read = read(file_from, buf, BUFFSIZE);
 	if (file_read == -1)
 		read_error(argv[1]);
@@ -94,5 +94,5 @@ void file_exists(char *argv1, char *argv2)
 	if (argv1 == NULL)
 		read_error(argv1);
 	if (argv2 == NULL)
-		write_error(argv2);
+		read_error(argv2);
 }
