@@ -94,5 +94,5 @@ void file_exists(char *argv1, char *argv2)
 	if (argv1 == NULL)
 		read_error(argv1);
 	if (argv2 == NULL)
-		write_error(argv2);
+		read_error(argv2);
 }
