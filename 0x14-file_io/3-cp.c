@@ -26,20 +26,18 @@ int main(int argc, char **argv)
 		exit(97);
 	}
 	file_exists(argv[1], argv[2]);
-/* open file from */
+	if (buf == NULL)
+		return (1);
 	file_from = open(argv[1], O_RDONLY);
 	if (file_from == -1)
 		read_error(argv[1]);
-/* open file to */
-	file_to = open(argv[2], O_CREAT | O_TRUNC | O_RDWR, S_IRUSR
+	file_to = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, S_IRUSR
 		       | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
 	if (file_to == -1)
 		read_error(argv[2]);
-/* read file_from to buffer */
 	file_read = read(file_from, buf, BUFFSIZE);
 	if (file_read == -1)
 		read_error(argv[1]);
-/* write from buffer to file_to. file_read(size_t) - the n of bytes read  */
 	while (file_read > 0)
 	{
 		write_to = write(file_to, buf, file_read);
@@ -50,12 +48,12 @@ int main(int argc, char **argv)
 			read_error(argv[1]);
 	}
 	close(file_from);
-	if (file_from == -1)
+	if ((close(file_from)) == -1)
 		close_error(file_from);
 	close(file_to);
-	if (file_from == -1)
+	if ((close(file_from)) == -1)
 		close_error(file_to);
-	return (1);
+	return (0);
 }
 /**
  * read_error - prints error if failed to read file
