@@ -5,7 +5,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
-#define BUFFSIZE 1024
+#define BUFFSIZE 1204
 /**
  * main - copies one file to another
  * @argc: number of arguments passed
@@ -19,6 +19,8 @@ int main(int argc, char **argv)
 	char buf[BUFFSIZE];
 	int write_to;
 	int file_read;
+	int close_from;
+	int close_to;
 
 	if (argc != 3)
 	{
@@ -45,12 +47,12 @@ int main(int argc, char **argv)
 		if (file_read == -1)
 			read_error(argv[1]);
 	}
-	close(file_from);
-	if ((close(file_from)) == -1)
-		close_error(file_from);
-	close(file_to);
-	if ((close(file_to)) == -1)
-		close_error(file_to);
+	close_from = close(file_from);
+	if ((close_from) == -1)
+		close_error(argv[1]);
+	close_to = close(file_to);
+	if ((close_to) == -1)
+		close_error(argv[2]);
 	return (0);
 }
 /**
@@ -78,9 +80,9 @@ void write_error(char *write_file)
  * @fd: file descriptors to be close
  * Return: Nothing
  */
-void close_error(int fd)
+void close_error(char *fd)
 {
-	dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+	dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", fd);
 	exit(100);
 }
 /**
