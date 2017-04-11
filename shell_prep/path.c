@@ -28,15 +28,14 @@ char *_getenv(const char *name)
 }
 int main (void)
 {
-	char *path;
 	char *path_sep;
 
-	path = _getenv("PATH");
-	path_sep = strtok(path, ":");
-	while (path != NULL)
+	path_sep = _getenv("PATH");
+	path_sep = strtok(path_sep, ":");
+	while (path_sep != NULL)
 	{
-		path_sep = strtok(NULL, ":");
 		printf("%s\n", path_sep);
+		path_sep = strtok(NULL, ":");
 	}
 	return (0);
 }
