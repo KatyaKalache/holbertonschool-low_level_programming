@@ -8,29 +8,33 @@
 void print_number(int n)
 {
 	int reversed;
+	int mod;
+	int copy;
+	int whole;
 
-	reversed = 0;
-	while (n > 0)
-	{
-		reversed = reversed * 10 + n % 10;
-		n /= 10;
-	}
+	mod = n % 10;
+	n = n / 10;
+	reversed = n;
+	copy = 1;
+	whole = 0;
+
 	while (reversed > 0)
 	{
-		n = reversed % 10 + '0';
-		_putchar(n);
-		reversed /= 10;
+		whole = whole + 1;
+		copy = copy * 10;
+		reversed = reversed / 10;
 	}
-
-	if (n == 0)
+	copy = copy / 10;
+	while (copy >= 1)
 	{
-		_putchar('0');
+		_putchar(n / copy + '0');
+		n = n % copy;
+		copy = copy / 10;
 	}
-	while (n < 0)
-	{
-		n = n * -1;
-		_putchar('-');
-		_putchar(n / 10 + '0');
-		_putchar(n % 10 + '0');
-	}
+	if (n < 0)
+        {
+                mod = mod * -1;
+                _putchar('-');
+        }
+	_putchar('0' + mod);
 }
