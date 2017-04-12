@@ -1,5 +1,8 @@
 #include <stdio.h>
-
+/**
+ * main - prints prime number of a given number
+ * Return: nothing
+ */
 int main(void)
 {
 	unsigned long int prime;
@@ -20,5 +23,5 @@ int main(void)
 		}
 	}
 	printf("%lu\n", prime);
-	return(0);
+	return (0);
 }
