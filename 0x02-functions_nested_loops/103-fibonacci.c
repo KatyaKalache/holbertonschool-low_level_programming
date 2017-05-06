@@ -9,15 +9,19 @@ int main(void)
 {
 	unsigned long num1 = 1;
 	unsigned long num2 = 2;
-	unsigned long num;
-	unsigned long sum = 2;
-	unsigned long max = 4000000;
+	unsigned int reassign;
+	unsigned long sum = 0;
+	unsigned long max = 30;
 
-	num = num1 + num2;
-	for (num = 0; num < max; num++)
+	while (num1 < max)
 	{
-		if (num % 2 == 0)
-			sum += num;
+		if (num1 % 2 == 0)
+		{
+			sum = sum + num1;
+		}
+		reassign = num2;
+		num2 = num1 + num2;
+		num1 = reassign;
 	}
 	printf("%lu\n", sum);
 	return (0);
