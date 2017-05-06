@@ -11,7 +11,7 @@ int main(void)
 	unsigned long num2 = 2;
 	unsigned int reassign;
 	unsigned long sum = 0;
-	unsigned long max = 30;
+	unsigned long max = 4000000;
 
 	while (num1 < max)
 	{
