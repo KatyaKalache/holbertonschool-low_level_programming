@@ -3,7 +3,8 @@
 #include <stdio.h>
 /**
  * add_dnodeint - adds new node at the begining
- * @h: head of the list
+ * @head: head of the list
+ * @n: number passed
  * Return: new node
  */
 dlistint_t *add_dnodeint(dlistint_t **head, const int n)
