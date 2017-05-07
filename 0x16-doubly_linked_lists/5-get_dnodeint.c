@@ -2,7 +2,7 @@
 #include <stdlib.h>
 /**
  * get_dnodeint_at_index - prints a node at index
- * @h: head og the list
+ * @head: head og the list
  * @index: position of the node to be printed
  * Return: new node at index
  */
