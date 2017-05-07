@@ -1,5 +1,10 @@
 #include "lists.h"
 #include <stdlib.h>
+/**
+ * sum_dlistint - sums up the value of all elements
+ * @head: head of the list
+ * Return: the sum
+ */
 int sum_dlistint(dlistint_t *head)
 {
 	dlistint_t *temp_node;

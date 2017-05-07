@@ -1,5 +1,11 @@
 #include "lists.h"
 #include <stdlib.h>
+/**
+ * get_dnodeint_at_index - prints a node at index
+ * @h: head og the list
+ * @index: position of the node to be printed
+ * Return: new node at index
+ */
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
 	unsigned int counter = 0;
