@@ -39,11 +39,11 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 	temp_node = *head;
 	while (temp_node->next != NULL)
 	{
-/* got to the end of the lost */
+/* got to the end of the list */
 		temp_node = temp_node->next;
 	}
 	temp_node->next = new_node;
-	new_node->next = NULL;
 	new_node->prev = temp_node;
+	new_node->next = NULL;
 	return (new_node);
 }
