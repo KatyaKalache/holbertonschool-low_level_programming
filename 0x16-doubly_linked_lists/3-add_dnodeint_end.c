@@ -24,6 +24,10 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 		return (NULL);
 	}
 
+	if (head == NULL)
+	{
+		return (NULL);
+	}
 	if (*head == NULL)
 	{
 		*head = new_node;
@@ -35,6 +39,7 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 	temp_node = *head;
 	while (temp_node->next != NULL)
 	{
+/* got to the end of the lost */
 		temp_node = temp_node->next;
 	}
 	new_node->next = NULL;
