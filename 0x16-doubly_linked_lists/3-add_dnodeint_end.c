@@ -27,10 +27,13 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 
 	if (*head != NULL)
 	{
+		return (NULL);
+	}
+	if (*head != NULL)
+	{
 		temp_node = *head;
 		while (temp_node->next != NULL)
 		{
-/* got to the end of the list */
 			temp_node = temp_node->next;
 		}
 		temp_node->next = new_node;
