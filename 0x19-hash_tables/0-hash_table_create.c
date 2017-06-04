@@ -9,18 +9,24 @@ hash_table_t *hash_table_create(unsigned long int size)
   hash_table_t *new_table;
   unsigned int i = 0;
 
+  if (size < 1)
+    return NULL;
+
+  /* allocate table space */
   new_table = malloc(sizeof(hash_table_t));
   if (!new_table)
     return NULL;
 
+  /* allocate head node pointers space */ 
   new_table->array = malloc(sizeof(hash_table_t *) * size);
   if (!new_table->array)
       return NULL;
 
-  while (i <= size)
+  while (i < size)
     {
       new_table->array[i] = NULL;
       i++;
     }
+
   return(new_table);
 }
