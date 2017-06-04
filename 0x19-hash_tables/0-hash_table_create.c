@@ -1,4 +1,5 @@
 #include "hash_tables.h"
+#include <limits.h>
 /**
  * hash_table_create - creates has table
  * @size: size of the array
@@ -9,7 +10,7 @@ hash_table_t *hash_table_create(unsigned long int size)
   hash_table_t *new_table;
   unsigned int i = 0;
 
-  if (size < 1)
+  if (size < 1 || size > LLONG_MAX)
     return NULL;
 
   /* allocate table space */
