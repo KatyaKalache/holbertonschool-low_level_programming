@@ -25,8 +25,14 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 		return (NULL);
 	}
 
-	if (array_ptr)
-		return (array_ptr->value);
-	else
-		return (NULL);
+	while (array_ptr)
+	{
+		if (!(array_ptr->key) || !(array_ptr->value))
+		{
+			return (NULL);
+		}
+		else
+			return (array_ptr->value);
+	}
+	return (NULL);
 }
