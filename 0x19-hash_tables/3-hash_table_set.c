@@ -1,5 +1,7 @@
 #include "hash_tables.h"
 #include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
 /**
  * hash_table_set - adds an element to the hash table
  * @ht: the table
@@ -9,12 +11,12 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *array_ptr, new_node;
+	hash_node_t *array_ptr, *new_node;
 	unsigned long int index;
 
 	if (!ht || !key || !value)
 		return (0);
-	index = key_index((unsigned char *)key, ht->size);
+	index = key_index((const unsigned char *)key, ht->size);
 	array_ptr = ht->array[index];
 	while (array_ptr)
 	{
