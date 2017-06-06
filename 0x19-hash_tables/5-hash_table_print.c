@@ -1,5 +1,7 @@
 #include "hash_tables.h"
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 /**
  * hash_table_print - prints a hash table
  * @ht: the hash table
@@ -10,14 +12,22 @@ void hash_table_print(const hash_table_t *ht)
 	hash_node_t *array_ptr;
 	unsigned long int i = 0;
 
+	if (!ht)
+		return;
+	printf("{");
 	while (i < ht->size)
 	{
 		array_ptr = ht->array[i];
 		while (array_ptr)
 		{
-			printf("%s\n", array_ptr->value);
+			printf("'%s': '%s'", array_ptr->key, array_ptr->value);
 			array_ptr = array_ptr->next;
+		}
+		if (ht->array[i+1])
+		{
+			printf(", ");
 		}
 		i++;
 	}
+	printf("}\n");
 }
