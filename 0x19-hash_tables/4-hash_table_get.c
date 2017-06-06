@@ -31,10 +31,6 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 		{
 			return (NULL);
 		}
-		if (array_ptr->key)
-		{
-			return (array_ptr->value);
-		}
 		return (array_ptr->value);
 	}
 	return (NULL);
