@@ -20,7 +20,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	}
 /* hashing the index */
-	index = key_index((const unsigned char *)key, ht->size);
+	index = key_index((unsigned char *)key, ht->size);
 /* set head to the index of the array */
 	array_ptr = ht->array[index];
 /* check if key exists in the list array_ptr is pointing to */
@@ -35,15 +35,25 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		array_ptr = array_ptr->next;
 	}
 	new_node = malloc(sizeof(hash_node_t));
-	if(!new_node)
+	if (!new_node)
 	{
 		return (0);
 	}
 	new_node->key = strdup(key);
 	if (!(new_node->key))
+	{
+		free(new_node);
 		return (0);
+	}
 	new_node->value = strdup(value);
 	if (!(new_node->value))
+	{
+		free(new_node->key);
+		free(new_node);
 		return (0);
+	}
+/* attach new_node to the head of the list / head of the list */
+	new_node->next = (ht->array[index]);
+	ht->array[index] = new_node;
 	return (1);
 }
