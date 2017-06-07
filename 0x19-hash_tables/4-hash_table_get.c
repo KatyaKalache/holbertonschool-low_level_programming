@@ -12,6 +12,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	hash_node_t *array_ptr;
 	unsigned long int index;
+	unsigned long int i = 0;
 
 	if (!ht || !key)
 	{
@@ -21,19 +22,16 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	index = key_index((const unsigned char *)key, ht->size);
 	array_ptr = ht->array[index];
 
-	if (index > (ht->size))
+	while (i < ht->size)
 	{
-		return (NULL);
-	}
-
-	while (array_ptr)
-	{
-		while (array_ptr->key && array_ptr->value)
+/* while there is value at index */
+		while (array_ptr)
 		{
 			if (strcmp(key, array_ptr->key) == 0)
 				return (array_ptr->value);
+			array_ptr = array_ptr->next;
 		}
-		array_ptr = array_ptr->next;
+		i++;
 	}
 	return (NULL);
 }
