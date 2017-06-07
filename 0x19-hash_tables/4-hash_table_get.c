@@ -33,7 +33,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 			if (strcmp(key, array_ptr->key) == 0)
 				return (array_ptr->value);
 		}
-		return (array_ptr->value);
+		array_ptr = array_ptr->next;
 	}
 	return (NULL);
 }
