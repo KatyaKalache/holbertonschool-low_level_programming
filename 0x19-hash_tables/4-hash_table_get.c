@@ -28,8 +28,11 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 
 	while (array_ptr)
 	{
-		if (strcmp(key, array_ptr->key) == 0)
-			return (array_ptr->value);
+		while (array_ptr->key && array_ptr->value)
+		{
+			if (strcmp(key, array_ptr->key) == 0)
+				return (array_ptr->value);
+		}
 	}
 	return (NULL);
 }
