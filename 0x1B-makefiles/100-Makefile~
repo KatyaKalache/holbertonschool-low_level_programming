@@ -1,6 +1,7 @@
 CC = gcc
 SRC = main.c holberton.c
 NAME = holberton
+OBJ = $(SRC:.c=.o)
 .PHONY all
 all: m.h
 	$(CC) $(SRC) -Wall -Werror -Wextra -pedantic -o $(NAME)
