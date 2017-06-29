@@ -1,7 +1,0 @@
-CC = gcc
-SRC = main.c holberton.c
-OBJ = holberton.o main.o
-NAME = holberton
-DEPS = m.h
-all:
-	$(CC) $(SRC) $(OBJ) -o $(NAME)
