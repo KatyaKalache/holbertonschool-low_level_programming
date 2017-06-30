@@ -4,8 +4,8 @@
 #include <stdlib.h>
 /**
  * main - prints the result of math operations
- * @num1: first number passed
- * @num2: second number passed
+ * @argc: number of arguments passed
+ * @argv: arguments passed
  * Return: result
  */
 int main(int argc, char *argv[])
