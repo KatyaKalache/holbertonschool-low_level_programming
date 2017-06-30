@@ -2,6 +2,11 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+/**
+ * get_op_func - selects the correct function to perform
+ * @s: operator passed
+ * Return: pointer to a func that perform the calc
+ */
 int (*get_op_func(char *s))(int, int)
 {
 	op_t ops[] = {
