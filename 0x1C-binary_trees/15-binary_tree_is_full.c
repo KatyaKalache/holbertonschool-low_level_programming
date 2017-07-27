@@ -1,9 +1,9 @@
 #include "binary_trees.h"
 
 /**
- * binary_tree_nodes - counts the nodes in a binary tree
+ * binary_tree_is_full - checks if binary tree is full
  * @tree: pointer to the root node of the tree to count the nodes in
- * Return: leaf count in binary tree
+ * Return: 1 is full, 0 otherwise
  */
 int binary_tree_is_full(const binary_tree_t *tree)
 {
