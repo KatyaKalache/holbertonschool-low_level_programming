@@ -2,6 +2,7 @@
 /**
  * binary_tree_inorder - goes through a binary tree using in-order traversal
  * @tree: tree to go through
+ * @func: function call
  * Return: nothing
  */
 void binary_tree_inorder(const binary_tree_t *tree, void (*func)(int))
