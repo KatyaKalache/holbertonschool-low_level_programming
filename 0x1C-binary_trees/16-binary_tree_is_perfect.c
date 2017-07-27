@@ -35,7 +35,7 @@ size_t binary_tree_size(const binary_tree_t *tree)
 }
 
 /**
- * height_is_equal - checks whether left branch is equal to right branch
+ * binary_tree_height - checks whether left branch is equal to right branch
  * @tree: pointer to the root node of the tree to measure the height of
  * Return: 1 if branches are equal, 0 otherwise
  */
