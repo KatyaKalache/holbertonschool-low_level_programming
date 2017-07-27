@@ -30,8 +30,6 @@ int height_is_equal(const binary_tree_t *tree)
 			temp_r = temp_r->right;
 		}
 
-		printf("left height: %d\n", count_left);
-		printf("right height: %d\n", count_right);
 		if (count_left == count_right)
 			return (1);
 		else
