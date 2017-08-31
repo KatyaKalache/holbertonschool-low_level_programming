@@ -12,7 +12,7 @@ Intro to search algorithms
 6. What is the space complexity of this function / algorithm?
 ### __Clone repository:__
 https://github.com/KatyaKalache/holbertonschool-low_level_programming
-|What should I learn  |
+| What should I learn  |
 | ---------------- |
 |    `What is a search algorithm`   |
 |    `What is a linear search`    |
