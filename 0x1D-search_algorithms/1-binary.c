@@ -15,7 +15,6 @@ int binary_search(int *array, size_t size, int value)
 
 	while (first <= last && array != NULL)
 	{
-		printf("Searching in array: %lu", i);
 		middle = (first + last) / 2;
 		if (array[middle] == value)
 		{
